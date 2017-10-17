@@ -10,7 +10,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // This component's `checkProps` which issues warnings to developers about properties
@@ -51,7 +50,7 @@ import { MENU_PICKLIST } from '../../utilities/constants';
  *
  * The MenuPicklist component is a variant of the Lightning Design System Menu component.
  */
-const MenuPicklist = createReactClass({
+const MenuPicklist = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: MENU_PICKLIST,

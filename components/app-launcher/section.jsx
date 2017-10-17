@@ -7,7 +7,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 
 import PropTypes from 'prop-types';
 
@@ -28,7 +27,7 @@ import { APP_LAUNCHER_SECTION } from '../../utilities/constants';
 /**
  * App Launcher Sections allow users to categorize App Tiles as well as toggle their display
  */
-const AppLauncherSection = createReactClass({
+const AppLauncherSection = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: APP_LAUNCHER_SECTION,

@@ -1,12 +1,12 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import Tabs from '~/components/tabs'; // `~` is replaced with design-system-react at runtime
 import TabsPanel from '~/components/tabs/panel';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'TabsExample',
-	
+
 	render () {
 		return (
 			<IconSettings iconPath="/assets/icons">

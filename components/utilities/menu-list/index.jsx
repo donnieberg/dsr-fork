@@ -8,7 +8,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### classNames
@@ -23,7 +22,7 @@ import { LIST } from '../../../utilities/constants';
 /**
  * Component description.
  */
-const List = createReactClass({
+const List = React.createClass({
 	displayName: LIST,
 
 	propTypes: {

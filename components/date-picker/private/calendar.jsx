@@ -2,12 +2,11 @@
 /* Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import Week from './week';
 import DateUtil from '../../../utilities/date';
 
-const DatepickerCalendar = createReactClass({
+const DatepickerCalendar = React.createClass({
 	displayName: 'SLDSDatepickerCalendar',
 
 	propTypes: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import Button from '~/components/button'; // `~` is replaced with design-system-react at runtime
 import Card from '~/components/card';
@@ -15,7 +15,7 @@ const sampleItems = [
 	{ name: 'Cloud City' }
 ];
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'CardExample',
 
 	getInitialState () {

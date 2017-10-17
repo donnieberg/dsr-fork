@@ -1,5 +1,5 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import PageHeader from '~/components/page-header'; // `~` is replaced with design-system-react at runtime
 import Button from '~/components/button';
@@ -7,7 +7,7 @@ import ButtonGroup from '~/components/button-group';
 import ButtonStateful from '~/components/button-stateful';
 import Dropdown from '~/components/menu-dropdown';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'PageHeaderExample',
 
 	render () {

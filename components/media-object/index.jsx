@@ -3,7 +3,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### classNames
@@ -24,7 +23,7 @@ export const cssClasses = {
 /**
  * When you need text and a figure next to each other, use a media object.
  */
-const MediaObject = createReactClass({
+const MediaObject = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: MEDIA_OBJECT,

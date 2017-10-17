@@ -7,7 +7,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### isFunction
@@ -33,7 +32,7 @@ import { FORMS_CHECKBOX } from '../../../utilities/constants';
 /**
  * The ability to style checkboxes with CSS varies across browsers. Using this component ensures checkboxes look the same everywhere.
  */
-const Checkbox = createReactClass({
+const Checkbox = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: FORMS_CHECKBOX,

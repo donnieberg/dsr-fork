@@ -9,7 +9,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### classNames
@@ -30,7 +29,7 @@ import checkProps from './check-props';
 import { FORMS_TEXTAREA } from '../../../utilities/constants';
 
 // ## TextareaDefinition
-const Textarea = createReactClass({
+const Textarea = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: FORMS_TEXTAREA,

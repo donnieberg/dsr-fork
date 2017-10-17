@@ -1,5 +1,5 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 
 import Panel from '~/components/panel'; // `~` is replaced with design-system-react at runtime
@@ -25,7 +25,7 @@ const options = {
 	]
 };
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'PanelExample',
 
 	getInitialState () {
@@ -146,7 +146,7 @@ const Example = createReactClass({
 									/>
 								</Filter>
 							: null}
-							
+
 							{this.state['list-price'].isActive
 							?	<Filter
 								id="sample-panel-filtering-list-price"

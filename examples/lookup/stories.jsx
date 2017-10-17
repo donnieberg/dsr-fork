@@ -1,5 +1,5 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import { storiesOf, action } from '@storybook/react';
 import IconSettings from '../../components/icon-settings';
 
@@ -10,7 +10,7 @@ import Footer from '../../components/lookup/footer';
 
 import SLDSButton from '../../components/button';
 
-const DemoLookup = createReactClass({
+const DemoLookup = React.createClass({
 	displayName: 'DemoLookup',
 
 	getInitialState () {
@@ -49,7 +49,7 @@ const DemoLookup = createReactClass({
 	}
 });
 
-const DemoLookupAccounts = createReactClass({
+const DemoLookupAccounts = React.createClass({
 	displayName: 'DemoLookupAccounts',
 
 	getInitialState () {

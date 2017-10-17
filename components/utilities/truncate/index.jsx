@@ -2,7 +2,6 @@
 /* Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 import memoize from 'lodash.memoize';
@@ -18,7 +17,7 @@ const measureWidth = memoize((text, font) => {
 	return canvasContext.measureText(text).width;
 });
 
-const TextTruncate = createReactClass({
+const TextTruncate = React.createClass({
 	displayName: 'TextTruncate',
 
 	propTypes: {

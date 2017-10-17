@@ -1,11 +1,11 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import Dropdown from '~/components/menu-dropdown'; // `~` is replaced with design-system-react at runtime
 import DropdownTrigger from '~/components/menu-dropdown/button-trigger'; // `~` is replaced with design-system-react at runtime
 import Button from '~/components/button/'; // `~` is replaced with design-system-react at runtime
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'DropdownExample',
 
 	render () {

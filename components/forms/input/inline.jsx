@@ -249,4 +249,3 @@ InlineEdit.propTypes = propTypes;
 InlineEdit.defaultProps = defaultProps;
 
 export default InlineEdit;
-

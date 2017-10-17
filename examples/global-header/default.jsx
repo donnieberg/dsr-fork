@@ -1,5 +1,5 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import GlobalHeader from '~/components/global-header'; // `~` is replaced with design-system-react at runtime
 import GlobalHeaderButton from '~/components/global-header/button';
@@ -7,7 +7,7 @@ import GlobalHeaderDropdown from '~/components/global-header/dropdown';
 import GlobalHeaderProfile from '~/components/global-header/profile';
 import GlobalHeaderSearch from '~/components/global-header/search';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'GlobalHeaderExample',
 
 	render () {

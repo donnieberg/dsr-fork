@@ -4,7 +4,6 @@
 /* eslint-disable no-unused-expressions */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 import chai, { expect } from 'chai';
@@ -27,7 +26,7 @@ const COMPONENT_CSS_CLASSES = {
 	base: 'slds-tree'
 };
 
-const DemoTree = createReactClass({
+const DemoTree = React.createClass({
 	displayName: 'DemoTree',
 
 	// ### Prop Types

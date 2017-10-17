@@ -1,5 +1,4 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import uniqueId from 'lodash.uniqueid';
 import { storiesOf, action } from '@storybook/react';
@@ -24,7 +23,7 @@ const sampleItems = [
 	{ name: 'Cloud City' }
 ];
 
-const DemoCard = createReactClass({
+const DemoCard = React.createClass({
 	displayName: 'DemoCard',
 
 	propTypes: {

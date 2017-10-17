@@ -1,5 +1,5 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import { storiesOf, action } from '@storybook/react';
 import IconSettings from '../../../components/icon-settings';
 
@@ -7,7 +7,7 @@ import { FORMS_CHECKBOX } from '../../../utilities/constants';
 import Checkbox from '../../../components/forms/checkbox';
 import Button from '../../../components/button';
 
-const CheckboxIndeterminate = createReactClass({
+const CheckboxIndeterminate = React.createClass({
 	displayName: `${FORMS_CHECKBOX}_INDETERMINATE`,
 
 	getInitialState () {

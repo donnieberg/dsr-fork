@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import { storiesOf, action } from '@storybook/react';
 import IconSettings from '../../components/icon-settings';
 
@@ -29,7 +29,7 @@ const getPicklist = (props) => (
 	</div>
 );
 
-const MultipleExample = createReactClass({
+const MultipleExample = React.createClass({
 	displayName: 'MultiplePicklistExample',
 
 	getInitialState () {

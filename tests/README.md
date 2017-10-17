@@ -99,7 +99,13 @@ chai.use(chaiEnzyme());
  * This wrapping component will be similar to your wrapping component
  * you will create in the React Storybook for manual testing.
  */
+<<<<<<< HEAD
 const propTypes = {
+=======
+const DemoComponent = React.createClass({
+  displayName: 'DemoComponent',
+  propTypes: {
+>>>>>>> aeb3fb6f... Revert "Merge pull request #1086 from interactivellama/create-class-polyfill"
     sampleProp: PropTypes.string
 };
 

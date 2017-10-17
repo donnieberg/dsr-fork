@@ -1,5 +1,5 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import GlobalNavigationBar from '~/components/global-navigation-bar'; // `~` is replaced with design-system-react at runtime
 import GlobalNavigationBarRegion from '~/components/global-navigation-bar/region';
@@ -13,7 +13,7 @@ import AppLauncher from '~/components/app-launcher';
 import AppLauncherSection from '~/components/app-launcher/section';
 import AppLauncherTile from '~/components/app-launcher/tile';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'GlobalNavigationBarExample',
 
 	render () {

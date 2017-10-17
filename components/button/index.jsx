@@ -5,7 +5,6 @@
 // Based on SLDS v2.2.1
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import ButtonIcon from '../icon/button-icon';
@@ -18,7 +17,7 @@ import { BUTTON } from '../../utilities/constants';
  * Either a <code>label</code> or <code>assistiveText</code> is required; see the Prop Details table below.
  * For buttons that maintain selected/unselected states, use the <a href="#/button-stateful">ButtonStateful</a> component.
  */
-const Button = createReactClass({
+const Button = React.createClass({
 	displayName: BUTTON,
 
 	propTypes: {

@@ -7,7 +7,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### Children
@@ -22,7 +21,7 @@ import { MENU_DROPDOWN_TRIGGER } from '../../../utilities/constants';
 /**
 *  Component description.
 */
-const TimepickerDropdownTrigger = createReactClass({
+const TimepickerDropdownTrigger = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name (set in the core) as the React
 	// display name.

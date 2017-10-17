@@ -1,12 +1,12 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import PopoverTooltip from '~/components/popover-tooltip'; // `~` is replaced with design-system-react at runtime
 import Icon from '~/components/icon';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'TooltipExample',
-	
+
 	render () {
 		return (
 			<IconSettings iconPath="/assets/icons">

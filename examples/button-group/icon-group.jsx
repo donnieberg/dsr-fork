@@ -1,11 +1,10 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import ButtonGroup from '~/components/button-group';
 import ButtonStateful from '~/components/button-stateful';
 import Dropdown from '~/components/menu-dropdown';
 import IconSettings from '~/components/icon-settings';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'ButtonGroupExample',
 
 	render () {

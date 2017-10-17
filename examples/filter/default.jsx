@@ -1,5 +1,4 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import IconSettings from '~/components/icon-settings';
 
@@ -18,7 +17,7 @@ const options = {
 	]
 };
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'FilterExample',
 
 	propTypes () {

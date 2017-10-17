@@ -1,9 +1,9 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import Textarea from '~/components/forms/textarea'; // `~` is replaced with design-system-react at runtime
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'TextareaExample',
 
 	render () {

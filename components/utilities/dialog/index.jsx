@@ -4,7 +4,6 @@
 
 // Dialog
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
@@ -31,7 +30,7 @@ import IconSettings from '../../icon-settings';
 
 /* Dialog creates a new top-level React tree and injects its child into it. This is necessary for proper styling (especially positioning). A dialog is a non-modal container that separates content from the rest of the web application. This library uses the Drop library (https://github.com/HubSpot/drop which is based on TetherJS) to absolutely position and align content to another item on the page. This component is not meant for external consumption or part of the published component API.
 */
-const Dialog = createReactClass({
+const Dialog = React.createClass({
 
 	displayName: DIALOG,
 

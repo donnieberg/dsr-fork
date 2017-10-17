@@ -9,7 +9,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import { shape } from 'airbnb-prop-types';
 
@@ -35,7 +34,7 @@ import checkProps from './check-props';
 import { FORMS_INPUT } from '../../../utilities/constants';
 
 // ## InputDefinition
-const Input = createReactClass({
+const Input = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: FORMS_INPUT,

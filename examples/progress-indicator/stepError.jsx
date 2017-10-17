@@ -1,8 +1,7 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import ProgressIndicator from '~/components/progress-indicator'; // `~` is replaced with design-system-react at runtime
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'ProgressIndicatorStepError',
 
 	render () {

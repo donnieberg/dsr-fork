@@ -1,5 +1,4 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
@@ -41,7 +40,7 @@ const defaultIds = {
  * This wrapping component will be similar to your wrapping component
  * you will create in the React Storybook for manual testing.
  */
-const DemoComponent = createReactClass({
+const DemoComponent = React.createClass({
 	displayName: 'PopoverDemoComponent',
 	propTypes: {
 		isOpen: PropTypes.bool

@@ -5,7 +5,6 @@
 // Based on SLDS v2.2.1
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### classNames
@@ -27,7 +26,7 @@ import Item from './private/item';
 /**
  * Navigation represents a list of links that either take the user to another page or parts of the page the user is in.
  */
-const Navigation = createReactClass({
+const Navigation = React.createClass({
 	displayName: NAVIGATION,
 
 	propTypes: {

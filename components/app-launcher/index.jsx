@@ -9,7 +9,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### classNames
@@ -61,7 +60,7 @@ import { APP_LAUNCHER } from '../../utilities/constants';
  * ```
  */
 
-const AppLauncher = createReactClass({
+const AppLauncher = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: APP_LAUNCHER,

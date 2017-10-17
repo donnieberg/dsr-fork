@@ -1,10 +1,10 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import Input from '~/components/forms/input'; // `~` is replaced with design-system-react at runtime
 
-const Example = createReactClass({
-	displayName: 'BaseInputExample',
+const Example = React.createClass({
+	displayName: 'InputExample',
 
 	render () {
 		return (

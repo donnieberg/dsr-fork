@@ -1,11 +1,11 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import Picklist from '~/components/menu-picklist'; // `~` is replaced with design-system-react at runtime
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'PicklistExample',
-	
+
 	render () {
 		return (
 			<IconSettings iconPath="/assets/icons">

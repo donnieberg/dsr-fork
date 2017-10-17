@@ -1,12 +1,12 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 import Notification from '~/components/notification';  // `~` is replaced with design-system-react at runtime
 import Button from '~/components/button';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'NotificationExample',
-	
+
 	getInitialState () {
 		return {
 			baseIsOpen: false,

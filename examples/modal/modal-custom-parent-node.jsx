@@ -1,9 +1,8 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import Modal from '~/components/modal'; // `~` is replaced with design-system-react at runtime
 import Button from '~/components/button';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'ModalExample',
 
 	getInitialState () {

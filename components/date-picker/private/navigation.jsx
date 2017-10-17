@@ -2,14 +2,13 @@
 /* Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import YearPicklist from './year-picklist';
 import Button from '../../button';
 
 import DateUtil from '../../../utilities/date';
 
-const DatepickerMonthNavigation = createReactClass({
+const DatepickerMonthNavigation = React.createClass({
 	displayName: 'SLDSDatepickerMonthNavigation',
 
 	propTypes: {

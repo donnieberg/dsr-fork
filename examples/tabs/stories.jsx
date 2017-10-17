@@ -1,5 +1,4 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import { storiesOf, action } from '@storybook/react';
 import IconSettings from '../../components/icon-settings';
@@ -155,7 +154,7 @@ const getTabsScoped = () => (
 );
 /* eslint-enable react/display-name */
 
-const DemoTabsConditional = createReactClass({
+const DemoTabsConditional = React.createClass({
 	displayName: 'DemoTabsConditional',
 
 	// ### Prop Types
@@ -264,7 +263,7 @@ const DemoTabsConditional = createReactClass({
 	}
 });
 
-const DemoTabsOutsideControl = createReactClass({
+const DemoTabsOutsideControl = React.createClass({
 	displayName: 'DemoTabsOutsideControl',
 
 	// ### Prop Types
@@ -498,7 +497,7 @@ const getCustomContentTabs = () => {
 };
 /* eslint-enable react/display-name */
 
-const DemoTabsInterceptSelect = createReactClass({
+const DemoTabsInterceptSelect = React.createClass({
 	displayName: 'DemoTabsInterceptSelect',
 
 	getInitialState () {

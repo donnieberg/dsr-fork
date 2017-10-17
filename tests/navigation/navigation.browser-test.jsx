@@ -13,7 +13,6 @@
 
 // Import your external dependencies
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import chai, { expect } from 'chai';
 import chaiEnzyme from 'chai-enzyme';
@@ -49,7 +48,7 @@ const defaultProps = {
 /* A re-usable demo component fixture outside of `describe` sections
  * can accept props within each test and be unmounted after each tests.
  */
-const DemoComponent = createReactClass({
+const DemoComponent = React.createClass({
 	displayName: 'NavigationDemoComponent',
 	propTypes: {
 		selectedId: PropTypes.string,

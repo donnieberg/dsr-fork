@@ -1,11 +1,11 @@
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import IconSettings from '~/components/icon-settings';
 
 // `~` is replaced with design-system-react at runtime
 import Checkbox from '~/components/forms/checkbox';
 
-const Example = createReactClass({
+const Example = React.createClass({
 	displayName: 'CheckboxExample',
 
 	render () {

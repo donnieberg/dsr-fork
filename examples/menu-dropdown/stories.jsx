@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
+
 import { storiesOf, action } from '@storybook/react';
 import IconSettings from '../../components/icon-settings';
 
@@ -56,7 +56,7 @@ const getDropdown = (props) => (
 	/>
 );
 
-const DropdownControlled = createReactClass({
+const DropdownControlled = React.createClass({
 	displayName: 'DropdownControlled',
 
 	getInitialState () {

@@ -7,7 +7,6 @@
 
 // ### React
 import React from 'react';
-import createReactClass from 'create-react-class';
 import PropTypes from 'prop-types';
 
 // ### isDate
@@ -28,7 +27,7 @@ import { TIME_PICKER } from '../../utilities/constants';
 /**
 *  Component description.
 */
-const Timepicker = createReactClass({
+const Timepicker = React.createClass({
 	// ### Display Name
 	// Always use the canonical component name as the React display name.
 	displayName: TIME_PICKER,

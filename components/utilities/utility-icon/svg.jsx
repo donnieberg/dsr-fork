@@ -2,9 +2,8 @@
 /* Licensed under BSD 3-Clause - see LICENSE.txt or git.io/sfdc-license */
 
 import React from 'react';
-import createReactClass from 'create-react-class';
 
-const Svg = createReactClass({
+const Svg = React.createClass({
 	displayName: 'Svg',
 
 	getPaths (paths) {
