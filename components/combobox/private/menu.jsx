@@ -65,103 +65,113 @@ const propTypes = {
 
 const defaultProps = {};
 
-const Menu = (props) => {
-	const menuOptions = props.options.map((optionData, index) => {
-		const active = (index === props.activeOptionIndex
-			&& isEqual(optionData, props.activeOption));
-		const selected = props.isSelected({ selection: props.selection, option: optionData });
+const Menu = React.createClass({
+	getMenuOptions () {
+		return this.props.options.map((optionData, index) => {
+			const active = (index === this.props.activeOptionIndex
+				&& isEqual(optionData, this.props.activeOption));
+			const selected = this.props.isSelected({ selection: this.props.selection, option: optionData });
+
+			return (
+				<li
+					className="slds-listbox__item"
+					key={`menu-option-${optionData.id}`}
+					role="presentation"
+				>
+					{{
+						'icon-title-subtitle': (
+							<span // eslint-disable-line jsx-a11y/no-static-element-interactions
+								aria-selected={active}
+								id={`${this.props.inputId}-listbox-option-${optionData.id}`}
+								className={classNames('slds-media slds-listbox__option',
+									'slds-listbox__option_entity slds-listbox__option_has-meta',
+									{ 'slds-has-focus': active })}
+								onClick={(event) => {
+									this.props.onSelect(event, { option: optionData });
+								}}
+								role="option"
+							>
+								{optionData.icon
+									? <span className="slds-media__figure">
+										{optionData.icon}
+									</span>
+									: null
+								}
+								<span className="slds-media__body">
+									<span className="slds-listbox__option-text slds-listbox__option-text_entity">{optionData.label}</span>
+									<span className="slds-listbox__option-meta slds-listbox__option-meta_entity">{optionData.subTitle}</span>
+								</span>
+							</span>
+						),
+						checkbox: (
+							<span // eslint-disable-line jsx-a11y/no-static-element-interactions
+								aria-selected={selected}
+								id={`${this.props.inputId}-listbox-option-${optionData.id}`}
+								className={classNames('slds-media slds-listbox__option',
+									' slds-listbox__option_plain slds-media_small slds-media_center',
+									{
+										'slds-has-focus': active,
+										'slds-is-selected': selected
+									})}
+								onClick={(event) => {
+									this.props.onSelect(event, { selection: this.props.selection, option: optionData });
+								}}
+								role="option"
+							>
+								<span className="slds-media__figure">
+									<Icon
+										className="slds-listbox__icon-selected"
+										category="utility"
+										name="check"
+										size="x-small"
+									/>
+								</span>
+								<span className="slds-media__body">
+									<span className="slds-truncate" title={optionData.label}>
+										{selected
+											? <span className="slds-assistive-text">{this.props.assistiveText.optionSelectedInMenu}</span>
+											: null
+										} {optionData.label}
+									</span>
+								</span>
+							</span>
+						)
+					}[this.props.variant]}
+				</li>
+			);
+		});
+	},
+
+	render () {
+		const menuOptions = this.getMenuOptions();
 
 		return (
-			<li
-				className="slds-listbox__item"
-				key={`menu-option-${optionData.id}`}
-				role="presentation"
-			>
-				{{
-					'icon-title-subtitle': (
-						<span // eslint-disable-line jsx-a11y/no-static-element-interactions
-							aria-selected={active}
-							id={`${props.inputId}-listbox-option-${optionData.id}`}
-							className={classNames('slds-media slds-listbox__option',
-								'slds-listbox__option_entity slds-listbox__option_has-meta',
-								{ 'slds-has-focus': active })}
-							onClick={(event) => {
-								props.onSelect(event, { option: optionData });
-							}}
-							role="option"
+			<div id={`${this.props.inputId}-listbox`} role="listbox">
+				<ul
+					className={classNames('slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid',
+						{
+							'slds-dropdown_length-with-icon-5': this.props.itemVisibleLength === 5,
+							'slds-dropdown_length-with-icon-7': this.props.itemVisibleLength === 7,
+							'slds-dropdown_length-with-icon-10': this.props.itemVisibleLength === 10
+						},
+						this.props.className)}
+					role="presentation"
+				>
+					{ menuOptions.length
+						? menuOptions
+						:	<li
+							className="slds-listbox__item slds-listbox__status"
+							role="status"
+							aria-live="polite"
 						>
-							{optionData.icon
-							? <span className="slds-media__figure">
-								{optionData.icon}
-							</span>
-							: null}
-							<span className="slds-media__body">
-								<span className="slds-listbox__option-text slds-listbox__option-text_entity">{optionData.label}</span>
-								<span className="slds-listbox__option-meta slds-listbox__option-meta_entity">{optionData.subTitle}</span>
-							</span>
-						</span>
-					),
-					checkbox: (
-						<span // eslint-disable-line jsx-a11y/no-static-element-interactions
-							aria-selected={selected}
-							id={`${props.inputId}-listbox-option-${optionData.id}`}
-							className={classNames('slds-media slds-listbox__option',
-								' slds-listbox__option_plain slds-media_small slds-media_center',
-								{
-									'slds-has-focus': active,
-									'slds-is-selected': selected
-								})}
-							onClick={(event) => {
-								props.onSelect(event, { selection: props.selection, option: optionData });
-							}}
-							role="option"
-						>
-							<span className="slds-media__figure">
-								<Icon
-									className="slds-listbox__icon-selected"
-									category="utility"
-									name="check"
-									size="x-small"
-								/>
-							</span>
-							<span className="slds-media__body">
-								<span className="slds-truncate" title={optionData.label}>
-									{selected
-										? <span className="slds-assistive-text">{props.assistiveText.optionSelectedInMenu}</span>
-										: null} {optionData.label}</span>
-							</span>
-						</span>
-				)
-				}[props.variant]}
-			</li>
+							<span className="slds-m-left--x-large slds-p-vertical--medium">{this.props.labels.noOptionsFound}</span>
+						</li>
+					}
+				</ul>
+			</div>
 		);
-	});
-
-	return (
-		<div id={`${props.inputId}-listbox`} role="listbox">
-			<ul
-				className={classNames('slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid',
-					{
-						'slds-dropdown_length-with-icon-5': props.itemVisibleLength === 5,
-						'slds-dropdown_length-with-icon-7': props.itemVisibleLength === 7,
-						'slds-dropdown_length-with-icon-10': props.itemVisibleLength === 10
-					},
-					props.className)}
-				role="presentation"
-			>
-				{menuOptions.length
-					? menuOptions
-					:	<li
-						className="slds-listbox__item slds-listbox__status"
-						role="status"
-						aria-live="polite"
-					>
-						<span className="slds-m-left--x-large slds-p-vertical--medium">{props.labels.noOptionsFound}</span>
-					</li>}
-			</ul>
-		</div>
-	);
-};
+	}
+});
 
 Menu.displayName = 'Menu';
 Menu.propTypes = propTypes;

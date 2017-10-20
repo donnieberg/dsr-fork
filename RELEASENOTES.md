@@ -30,10 +30,15 @@ These are changes that have backwards-compatible solutions present and that comp
 
 ### Latest Release
 
+## Release 0.7.1-alpha
+- Revert package.json dependencies relying on react15
+- Revert create-react-class
+- Make Combobox and Label components use stateful react classes so they can return null (fixed in react15 but not 14)
+
 ## Release 0.7.1
 - Allow inline icons and `icon` prop data passed directly in to work properly again.
 - Rename internal constant bugs having to do with component names
-- Pass `assistiveText` from MenuDropdown to trigger button 
+- Pass `assistiveText` from MenuDropdown to trigger button
 - Replace `classname` with `classnameContainer` on TextArea container
 - Clarify test readme
 
@@ -82,6 +87,19 @@ ReactDOM.render(
 	/>
 	```
 
+
+React 14 Retrofit
+- Reverted commits from DSR upstream that would only work with React 15+
+- Revert createReactClass and revert bumping dependencies like react-onclickoutside.
+- Make package.json `main` point to the `design-system-react-components.min.js`
+- Make Combobox components stateful so that they don't throw errors in 14 if return null (React fixed bug in 15+).
+
+## Release 0.7.1
+- Allow inline icons and `icon` prop data passed directly in to work properly again.
+- Rename internal constant bugs having to do with component names
+- Pass `assistiveText` from MenuDropdown to trigger button
+- Replace `classname` with `classnameContainer` on TextArea container
+- Clarify test readme
 
 ## Release 0.6.23
 Major features

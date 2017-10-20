@@ -36,29 +36,32 @@ const defaultProps = {
 /*
  * Form label. This returns null if there is no label text (hidden or shown)
  */
-const Label = (props) => {
-	const labelText = props.label
-		|| (props.assistiveText && props.assistiveText.label); // One of these is required to pass accessibility tests
 
-	const subRenders = {
-		base: (<label
-			className={classNames('slds-form-element__label', {
-				'slds-assistive-text': props.assistiveText && !props.label
-			})}
-			htmlFor={props.htmlFor}
-		>
-			{props.required && <abbr className="slds-required" title="required">*</abbr>}
-			{labelText}
-		</label>),
-		static: (<span className="slds-form-element__label">{labelText}</span>)
-	};
+const Label = React.createClass({
+	render () {
+		const labelText = this.props.label
+			|| (this.props.assistiveText && this.props.assistiveText.label); // One of these is required to pass accessibility tests
 
-	return (
-		labelText
-		? subRenders[props.variant]
-		: null
-	);
-};
+		const subRenders = {
+			base: (<label
+				className={classNames('slds-form-element__label', {
+					'slds-assistive-text': this.props.assistiveText && !this.props.label
+				})}
+				htmlFor={this.props.htmlFor}
+			>
+				{this.props.required && <abbr className="slds-required" title="required">*</abbr>}
+				{labelText}
+			</label>),
+			static: (<span className="slds-form-element__label">{labelText}</span>)
+		};
+
+		return (
+			labelText
+			? subRenders[this.props.variant]
+			: null
+		);
+	}
+});
 
 Label.displayName = 'Label';
 Label.propTypes = propTypes;

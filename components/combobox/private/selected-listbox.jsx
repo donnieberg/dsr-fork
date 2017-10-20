@@ -78,77 +78,82 @@ const defaultProps = {
 	renderAtSelectionLength: 1
 };
 
-const SelectedListBox = (props) => (
-	props.selection.length >= props.renderAtSelectionLength ? <div // eslint-disable-line jsx-a11y/role-supports-aria-props
-		id={`${props.id}-selected-listbox`}
-		role="listbox"
-		aria-orientation="horizontal"
-	>
-		<ul
-			className={classNames(
-				'slds-listbox', {
-					'slds-listbox--inline': props.isInline,
-					'slds-listbox_horizontal': !props.isInline,
-					'slds-p-top_xxx-small': !props.isInline
-				}
-			)}
-			role="group"
-			aria-label={props.assistiveText.selectedListboxLabel}
-		>
-			{props.selection.map((option, renderIndex) => {
-				const setActiveBasedOnstateFromParent = renderIndex === props.activeOptionIndex
-					&& isEqual(option, props.activeOption);
-				const listboxRenderedForFirstTime =
-				(props.activeOptionIndex === -1 && renderIndex === 0)
-				|| (props.variant === 'readonly'
-					&& props.selection.length !== 1
-					&& renderIndex === 0);
-				const active = setActiveBasedOnstateFromParent || listboxRenderedForFirstTime;
-				const icon = option.icon
-					? React.cloneElement(option.icon, {
-						containerClassName: 'slds-pill__icon_container'
-					})
-					: null;
-
-				return (
-					<li
-						role="presentation"
-						className="slds-listbox__item"
-						key={`${props.id}-list-item-${option.label}`}
+const SelectedListBox = React.createClass({
+	render () {
+		return (
+			this.props.selection.length >= this.props.renderAtSelectionLength ?
+				<div // eslint-disable-line jsx-a11y/role-supports-aria-this.props
+					id={`${this.props.id}-selected-listbox`}
+					role="listbox"
+					aria-orientation="horizontal"
+				>
+					<ul
+						className={classNames(
+							'slds-listbox', {
+								'slds-listbox--inline': this.props.isInline,
+								'slds-listbox_horizontal': !this.props.isInline,
+								'slds-p-top_xxx-small': !this.props.isInline
+							}
+						)}
+						role="group"
+						aria-label={this.props.assistiveText.selectedListboxLabel}
 					>
-						<Pill
-							active={active}
-							assistiveText={{
-								remove: props.assistiveText.removePill
-							}}
-							events={{
-								onBlur: props.events.onBlurPill,
-								onClick: (event, data) => {
-									props.events.onClickPill(event, { ...data, index: renderIndex });
-								},
-								onRequestFocusOnNextPill: props.events.onRequestFocusOnNextPill,
-								onRequestFocusOnPreviousPill: props.events.onRequestFocusOnPreviousPill,
-								onRequestRemove: (event, data) => {
-									props.events.onRequestRemove(event, { ...data, index: renderIndex });
-								},
-								onRequestFocus: props.events.onRequestFocus
-							}}
-							eventData={{ option }}
-							icon={icon}
-							labels={{
-								label: option.label,
-								removeTitle: props.labels.removePillTitle
-							}}
-							requestFocus={props.listboxHasFocus}
-							tabIndex={active ? 0 : -1}
-						/>
-					</li>
-				);
-			})}
+						{this.props.selection.map((option, renderIndex) => {
+							const setActiveBasedOnstateFromParent = renderIndex === this.props.activeOptionIndex
+								&& isEqual(option, this.props.activeOption);
+							const listboxRenderedForFirstTime =
+								(this.props.activeOptionIndex === -1 && renderIndex === 0)
+								|| (this.props.variant === 'readonly'
+									&& this.props.selection.length !== 1
+									&& renderIndex === 0);
+							const active = setActiveBasedOnstateFromParent || listboxRenderedForFirstTime;
+							const icon = option.icon
+								? React.cloneElement(option.icon, {
+									containerClassName: 'slds-pill__icon_container'
+								})
+								: null;
 
-		</ul>
-	</div>
-	: null);
+							return (
+								<li
+									role="presentation"
+									className="slds-listbox__item"
+									key={`${this.props.id}-list-item-${option.label}`}
+								>
+									<Pill
+										active={active}
+										assistiveText={{
+											remove: this.props.assistiveText.removePill
+										}}
+										events={{
+											onBlur: this.props.events.onBlurPill,
+											onClick: (event, data) => {
+												this.props.events.onClickPill(event, { ...data, index: renderIndex });
+											},
+											onRequestFocusOnNextPill: this.props.events.onRequestFocusOnNextPill,
+											onRequestFocusOnPreviousPill: this.props.events.onRequestFocusOnPreviousPill,
+											onRequestRemove: (event, data) => {
+												this.props.events.onRequestRemove(event, { ...data, index: renderIndex });
+											},
+											onRequestFocus: this.props.events.onRequestFocus
+										}}
+										eventData={{ option }}
+										icon={icon}
+										labels={{
+											label: option.label,
+											removeTitle: this.props.labels.removePillTitle
+										}}
+										requestFocus={this.props.listboxHasFocus}
+										tabIndex={active ? 0 : -1}
+									/>
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+			: null
+		);
+	}
+});
 
 SelectedListBox.displayName = 'SelectedListBox';
 SelectedListBox.propTypes = propTypes;
