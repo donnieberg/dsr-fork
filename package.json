@@ -1,6 +1,6 @@
 {
   "name": "design-system-react",
-  "version": "0.7.1-alpha",
+  "version": "0.7.1-beta",
   "description": "Salesforce Lightning Design System for React",
   "license": "SEE LICENSE IN README.md",
   "engines": {
@@ -57,7 +57,7 @@
   "bugs": {
     "url": "https://github.com/salesforce-ux/design-system-react/issues"
   },
-  "main": "components/index.js",
+  "main": "design-system-react-components.min.js",
   "homepage": "https://react.lightningdesignsystem.com",
   "dependencies": {
     "airbnb-prop-types": "~2.5.3",
